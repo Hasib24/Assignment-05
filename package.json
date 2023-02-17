@@ -4,7 +4,8 @@
   "description": "\"# b7a5-geometry-genius-assignment-Hasib24\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/style.css --watch"
   },
   "repository": {
     "type": "git",
