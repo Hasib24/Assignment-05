@@ -1,0 +1,22 @@
+{
+  "name": "assignment-5",
+  "version": "1.0.0",
+  "description": "\"# b7a5-geometry-genius-assignment-Hasib24\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programming-hero-web-course2/b7a5-geometry-genius-assignment-Hasib24.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/programming-hero-web-course2/b7a5-geometry-genius-assignment-Hasib24/issues"
+  },
+  "homepage": "https://github.com/programming-hero-web-course2/b7a5-geometry-genius-assignment-Hasib24#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
