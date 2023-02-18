@@ -50,19 +50,29 @@ const areaCalcFun = (e) => {
     const parallelogramArea = 10 * 12;
     let newli = document.createElement("li");
 
-    newli.innerText = `parallelogram ${parallelogramArea} cm`;
+    newli.innerText = `Area of parallelogram = ${parallelogramArea} cm`;
     resultDisplay.appendChild(newli);
   } else if (e.target.name == "rhombus") {
     const rhombusArea = 0.5 * 16 * 6;
     let newli = document.createElement("li");
-    newli.innerText = `Area of Rhombus ${rhombusArea} cm`;
+    newli.innerText = `Area of rhombus = ${rhombusArea} cm`;
     resultDisplay.appendChild(newli);
   } else if (e.target.name == "pentagon") {
     const pentagonArea = 0.5 * 6 * 10;
-    console.log(`pentagon area ${pentagonArea} ok`);
+
+    let newli = document.createElement("li");
+    newli.innerText = `Area of pentagon = ${pentagonArea} cm`;
+    resultDisplay.appendChild(newli);
+
+  
   } else if (e.target.name == "ellipse") {
     const ellipseArea = 3.1416 * 10 * 4;
-    console.log(`ellipse area ${ellipseArea} ok`);
+
+    let newli = document.createElement("li");
+    newli.innerText = `Area of ellipse = ${ellipseArea} cm`;
+    resultDisplay.appendChild(newli);
+
+
   }
 };
 
