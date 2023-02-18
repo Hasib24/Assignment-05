@@ -1,47 +1,34 @@
-const blueCalcBtns = (btnClass) => {
-  return document.getElementsByClassName(btnClass);
+const elsByCls = (cls) => {
+  return document.getElementsByClassName(cls);
 };
 
 const elById = (id) => {
   return document.getElementById(id);
 };
 
+//  Area of triangle and rectangle calculation function
 
-
-
-const triangleAreaCalcFun = (e) =>{
-
+const triangleAreaCalcFun = (e) => {
   let triangleA = parseFloat(elById("triangleA").value);
   let triangleB = parseFloat(elById("triangleB").value);
 
- 
-    if(e.target.name =='triangle'){
-      triangleA <= 0 || triangleB <= 0 || isNaN(triangleA) || isNaN(triangleB) ? alert(`String, zero and negetive number are invalid`) : console.log(0.5*triangleA*triangleB)
-    }
-  
-  
-}
+  if (e.target.name == "triangle") {
+    triangleA <= 0 || triangleB <= 0 || isNaN(triangleA) || isNaN(triangleB)
+      ? alert(`String, zero and negetive number are invalid`)
+      : console.log(0.5 * triangleA * triangleB);
+  }
+};
 
-
-const rectangleAreaCalcFun = (e) =>{
-
+const rectangleAreaCalcFun = (e) => {
   let rectangleW = parseFloat(elById("rectangleW").value);
   let rectangleL = parseFloat(elById("rectangleL").value);
 
- 
-    if(e.target.name =='rectangle'){
-      rectangleW <= 0 || rectangleL <= 0 || isNaN(rectangleW) || isNaN(rectangleL) ? alert(`String, zero and negetive number are invalid`) : console.log(rectangleW*rectangleL)
-    }
-
-  
-
-  
-  
-}
-
-
-
-
+  if (e.target.name == "rectangle") {
+    rectangleW <= 0 || rectangleL <= 0 || isNaN(rectangleW) || isNaN(rectangleL)
+      ? alert(`String, zero and negetive number are invalid`)
+      : console.log(rectangleW * rectangleL);
+  }
+};
 
 let resultDisplay = elById("AreaofReasultDisplay");
 
@@ -66,16 +53,38 @@ const areaCalcFun = (e) => {
   }
 };
 
-const routerFun = (e) =>{
-  areaCalcFun(e)
-  triangleAreaCalcFun(e)
-  rectangleAreaCalcFun(e)
-}
+const routerFun = (e) => {
+  areaCalcFun(e);
+  triangleAreaCalcFun(e);
+  rectangleAreaCalcFun(e);
+};
 // for calculation of last 4 shape
-for (const calcBtn of blueCalcBtns("btn")) {
+for (const calcBtn of elsByCls("btn")) {
   calcBtn.addEventListener("click", routerFun);
 }
 
+// for card hover
+// const cards = elsByCls("hasib_card");
+// for (let card of cards) {
+//   card.addEventListener('mouseenter', (e) =>{
+//     let bgColor = genBgColorRandom()
+    
+//     e.target.classList.add = bgColor
+//     console.log(e.target.classList);
+//   } )
+// }
+
+
+
+// rgba color generator function 
+const genBgColorRandom = () => {
+  let red = Math.floor(Math.random() * 100);
+  let green = Math.floor(Math.random() * 100);
+  let blue = Math.floor(Math.random() * 100);
+  return `bg-[#${red.toString(16)}${green.toString(16)}${blue.toString(16)}]`;
+};
+
+// console.log(genBgColorRandom())
 
 // for blog nevigation
 let btnBlog = elById("btn-blog");
