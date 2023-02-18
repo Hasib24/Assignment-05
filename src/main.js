@@ -6,7 +6,18 @@ const elById = (id) => {
   return document.getElementById(id);
 };
 
+let resultDisplay = elById("AreaofReasultDisplay");
+
 //  Area of triangle and rectangle calculation function
+
+const pushToDisplay = (e, param1, param2) =>{
+
+  let newLi = document.createElement('li');
+  newLi.innerText = `Area of ${e.target.name} = ${0.5*param1*param2} cm`
+  resultDisplay.appendChild(newLi)
+
+  
+}
 
 const triangleAreaCalcFun = (e) => {
   let triangleA = parseFloat(elById("triangleA").value);
@@ -15,9 +26,12 @@ const triangleAreaCalcFun = (e) => {
   if (e.target.name == "triangle") {
     triangleA <= 0 || triangleB <= 0 || isNaN(triangleA) || isNaN(triangleB)
       ? alert(`String, zero and negetive number are invalid`)
-      : console.log(0.5 * triangleA * triangleB);
+      : pushToDisplay(e, triangleA, triangleB);
   }
+  
 };
+
+
 
 const rectangleAreaCalcFun = (e) => {
   let rectangleW = parseFloat(elById("rectangleW").value);
@@ -26,23 +40,22 @@ const rectangleAreaCalcFun = (e) => {
   if (e.target.name == "rectangle") {
     rectangleW <= 0 || rectangleL <= 0 || isNaN(rectangleW) || isNaN(rectangleL)
       ? alert(`String, zero and negetive number are invalid`)
-      : console.log(rectangleW * rectangleL);
+      : pushToDisplay(e, rectangleW, rectangleL);
   }
 };
-
-let resultDisplay = elById("AreaofReasultDisplay");
 
 // for calculation of last 4 shape
 const areaCalcFun = (e) => {
   if (e.target.name == "parallelogram") {
     const parallelogramArea = 10 * 12;
     let newli = document.createElement("li");
-    newli.innerText = `parallelogram ${parallelogramArea} cm sqr`;
+
+    newli.innerText = `parallelogram ${parallelogramArea} cm`;
     resultDisplay.appendChild(newli);
   } else if (e.target.name == "rhombus") {
     const rhombusArea = 0.5 * 16 * 6;
     let newli = document.createElement("li");
-    newli.innerText = `Area of Rhombus ${rhombusArea} cm sqr`;
+    newli.innerText = `Area of Rhombus ${rhombusArea} cm`;
     resultDisplay.appendChild(newli);
   } else if (e.target.name == "pentagon") {
     const pentagonArea = 0.5 * 6 * 10;
@@ -68,15 +81,13 @@ for (const calcBtn of elsByCls("btn")) {
 // for (let card of cards) {
 //   card.addEventListener('mouseenter', (e) =>{
 //     let bgColor = genBgColorRandom()
-    
+
 //     e.target.classList.add = bgColor
 //     console.log(e.target.classList);
 //   } )
 // }
 
-
-
-// rgba color generator function 
+// rgba color generator function
 const genBgColorRandom = () => {
   let red = Math.floor(Math.random() * 100);
   let green = Math.floor(Math.random() * 100);

@@ -1,3 +1,9 @@
 img{
     height: 100px;
 }
+li::after{
+    position: absolute;
+    content: '2';
+    margin-top: -1px;
+    font-size: 12px;
+}
