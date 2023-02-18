@@ -7,6 +7,7 @@
     <title>Assignment 5 :: Geometry Book</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="coustom.css" />
   </head>
   <body>
     <header class="container border-2 rounded mx-auto mt-5 flex flex-row justify-between bg-slate-200">
@@ -16,7 +17,7 @@
         </div>
 
         <div class="p-5 border-2 flex items-center">
-            <button class="bg-blue-700 text-white px-2 py-1 font-normal text-2xl rounded-md">Blog</button>
+            <button id="btn-blog" class="bg-blue-700 text-white px-2 py-1 font-normal text-2xl rounded-md">Blog</button>
         </div>
 
     </header>
@@ -48,13 +49,14 @@
                     <input type="submit" name="rectangle" id="" value="Calculate" class="btn w-full bg-blue-700 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold px-10 py-2 mt-3 rounded-md">               
                 </div>
                 <!-- card 3 -->
+                
                 <div class="p-5 m-2 border-2 rounded-md text-center">
                     <img class="mx-auto" src="images/parallelogram.png" alt="">
                     <h1 class="text-2xl font-semibold m-5">Paralleogram</h1>
                     <span class="block text-2xl">Area (A) = b x h</span>
                     <div class="m-2">
-                        <input class="inline-block w-14 border-2 rounded-md outline-none px-2 text-2xl" type="text" name="" value="10" id=""> <span class="text-2xl font-normal">cm</span>
-                        <input class="inline-block w-14 border-2 rounded-md outline-none px-2 text-2xl" type="text" name="" value="12" id=""> <span class="text-2xl font-normal">cm</span>
+                        <input class="inline-block w-14 border-2 rounded-md outline-none px-2 text-2xl" type="text" name="" value="10" id="" disabled > <span class="text-2xl font-normal">cm</span>
+                        <input class="inline-block w-14 border-2 rounded-md outline-none px-2 text-2xl" type="text" name="" value="12" id="" disabled > <span class="text-2xl font-normal">cm</span>
                     </div>
                     <input type="submit" name="parallelogram" id="" value="Calculate" class="btn w-full bg-blue-700 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold px-10 py-2 mt-3 rounded-md">               
                 </div>
@@ -105,6 +107,7 @@
         </div>
         <!-- calculated area :: display  -->
         <div class="border-2 m-2 p-5">
+            <h1 class="text-center underline font-semibold text-2xl">Area Calculation</h1>
             <ol class="list-decimal" id="AreaofReasultDisplay">
                 
             </ol>

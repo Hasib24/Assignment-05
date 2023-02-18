@@ -5,7 +5,10 @@ const calcBtns = (btnClass) => {
 const elById = (id) => {
   return document.getElementById(id);
 };
-
+let btnBlog = elById("btn-blog");
+  btnBlog.addEventListener('click', (e)=>{
+    location.href = "blog.html"
+  })
 let resultDisplay = elById("AreaofReasultDisplay");
 
 const areaCalcFun = (e) => {
