@@ -547,6 +547,10 @@ video {
   }
 }
 
+.order-1 {
+  order: 1;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -598,6 +602,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.list-decimal {
+  list-style-type: decimal;
 }
 
 .grid-cols-1 {
@@ -652,6 +660,10 @@ video {
 
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-10 {
