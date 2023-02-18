@@ -10,15 +10,12 @@ let resultDisplay = elById("AreaofReasultDisplay");
 
 //  Area of triangle and rectangle calculation function
 
-const pushToDisplay = (e, param1, param2) =>{
-
-  let newLi = document.createElement('li');
-  newLi.innerText = `Area of ${e.target.name} = ${0.5*param1*param2} cm`
-  resultDisplay.appendChild(newLi)
-
-  
-}
-
+const pushToDisplay = (e, param1, param2) => {
+  let newLi = document.createElement("li");
+  newLi.innerText = `Area of ${e.target.name} = ${0.5 * param1 * param2} cm`;
+  resultDisplay.appendChild(newLi);
+};
+// function for calculation or Triangle Area
 const triangleAreaCalcFun = (e) => {
   let triangleA = parseFloat(elById("triangleA").value);
   let triangleB = parseFloat(elById("triangleB").value);
@@ -28,11 +25,9 @@ const triangleAreaCalcFun = (e) => {
       ? alert(`String, zero and negetive number are invalid`)
       : pushToDisplay(e, triangleA, triangleB);
   }
-  
 };
 
-
-
+// function for calculation or rectangle Area
 const rectangleAreaCalcFun = (e) => {
   let rectangleW = parseFloat(elById("rectangleW").value);
   let rectangleL = parseFloat(elById("rectangleL").value);
@@ -44,7 +39,7 @@ const rectangleAreaCalcFun = (e) => {
   }
 };
 
-// for calculation of last 4 shape
+// function for calculation of last 4 shape
 const areaCalcFun = (e) => {
   if (e.target.name == "parallelogram") {
     const parallelogramArea = 10 * 12;
@@ -63,25 +58,22 @@ const areaCalcFun = (e) => {
     let newli = document.createElement("li");
     newli.innerText = `Area of pentagon = ${pentagonArea} cm`;
     resultDisplay.appendChild(newli);
-
-  
   } else if (e.target.name == "ellipse") {
     const ellipseArea = 3.1416 * 10 * 4;
 
     let newli = document.createElement("li");
     newli.innerText = `Area of ellipse = ${ellipseArea} cm`;
     resultDisplay.appendChild(newli);
-
-
   }
 };
-
+// for routing clicked event
 const routerFun = (e) => {
   areaCalcFun(e);
   triangleAreaCalcFun(e);
   rectangleAreaCalcFun(e);
 };
-// for calculation of last 4 shape
+
+// for calculation  start
 for (const calcBtn of elsByCls("btn")) {
   calcBtn.addEventListener("click", routerFun);
 }
@@ -97,15 +89,13 @@ for (const calcBtn of elsByCls("btn")) {
 //   } )
 // }
 
-// rgba color generator function
+// Hex color generator function
 const genBgColorRandom = () => {
   let red = Math.floor(Math.random() * 100);
   let green = Math.floor(Math.random() * 100);
   let blue = Math.floor(Math.random() * 100);
   return `bg-[#${red.toString(16)}${green.toString(16)}${blue.toString(16)}]`;
 };
-
-// console.log(genBgColorRandom())
 
 // for blog nevigation
 let btnBlog = elById("btn-blog");
