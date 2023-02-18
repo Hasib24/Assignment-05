@@ -12,9 +12,16 @@ let resultDisplay = elById("AreaofReasultDisplay");
 //  Area of triangle and rectangle calculation function
 
 const pushToDisplay = (e, param1, param2) => {
-  let newLi = document.createElement("li");
-  newLi.innerText = `Area of ${e.target.name} = ${0.5 * param1 * param2} cm`;
-  resultDisplay.appendChild(newLi);
+  if (e.target.name == "rectangle") {
+    let newLi = document.createElement("li");
+    newLi.innerText = `Area of ${e.target.name} = ${param1 * param2} cm`;
+    resultDisplay.appendChild(newLi);
+  }
+  if (e.target.name == "triangle") {
+    let newLi = document.createElement("li");
+    newLi.innerText = `Area of ${e.target.name} = ${0.5 * param1 * param2} cm`;
+    resultDisplay.appendChild(newLi);
+  }
 };
 // function for calculation or Triangle Area
 const triangleAreaCalcFun = (e) => {
@@ -96,7 +103,7 @@ const randomBgArray = [
 // for card hover
 
 /**
- * Random color is added for each card but it does not 
+ * Random color is added for each card but it does not
  * work perfectly. To see rendom bg color of card please
  * Hover on card frequent times.
  */
@@ -112,7 +119,6 @@ const mouseHoverFun = (e) => {
 for (const card of elsByCls("hasib_card")) {
   card.addEventListener("mouseenter", mouseHoverFun);
 }
-
 
 // for blog nevigation
 let btnBlog = elById("btn-blog");
