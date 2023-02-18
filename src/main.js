@@ -1,7 +1,8 @@
+// re useable function 1
 const elsByCls = (cls) => {
   return document.getElementsByClassName(cls);
 };
-
+// re useable function 2
 const elById = (id) => {
   return document.getElementById(id);
 };
@@ -78,24 +79,40 @@ for (const calcBtn of elsByCls("btn")) {
   calcBtn.addEventListener("click", routerFun);
 }
 
+const randomBgArray = [
+  "hover:bg-slate-200",
+  "hover:bg-slate-300",
+  "hover:bg-slate-600",
+  "hover:bg-slate-700",
+  "hover:bg-red-200",
+  "hover:bg-red-300",
+  "hover:bg-red-400",
+  "hover:bg-emerald-400",
+  "hover:bg-emerald-500",
+  "hover:bg-emerald-600",
+  "hover:bg-emerald-700",
+];
+
 // for card hover
-// const cards = elsByCls("hasib_card");
-// for (let card of cards) {
-//   card.addEventListener('mouseenter', (e) =>{
-//     let bgColor = genBgColorRandom()
 
-//     e.target.classList.add = bgColor
-//     console.log(e.target.classList);
-//   } )
-// }
+/**
+ * Random color is added for each card but it does not 
+ * work perfectly. To see rendom bg color of card please
+ * Hover on card frequent times.
+ */
 
-// Hex color generator function
-const genBgColorRandom = () => {
-  let red = Math.floor(Math.random() * 100);
-  let green = Math.floor(Math.random() * 100);
-  let blue = Math.floor(Math.random() * 100);
-  return `bg-[#${red.toString(16)}${green.toString(16)}${blue.toString(16)}]`;
+const randomColorCode = () => {
+  return randomBgArray[parseInt(Math.random() * 10)];
 };
+
+const mouseHoverFun = (e) => {
+  e.target.classList.add(randomColorCode());
+};
+
+for (const card of elsByCls("hasib_card")) {
+  card.addEventListener("mouseenter", mouseHoverFun);
+}
+
 
 // for blog nevigation
 let btnBlog = elById("btn-blog");
